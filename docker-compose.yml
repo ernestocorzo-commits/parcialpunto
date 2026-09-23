@@ -1,0 +1,10 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: week07-lab-db
+    ports:
+      - "${DB_PORT:-5433}:5432"
+    environment:
+      POSTGRES_DB: ${DB_NAME:-flyaway}
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
